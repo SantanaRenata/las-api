@@ -37,7 +37,7 @@ class DAO {
 
       this.db.run(sql, params, (err) => {
         if (err) {
-          console.error("Error running sql " + sql);
+          console.error ("Error running sql " + sql);
           reject(err);
         } else {
           resolve({ id: this.lastID });
@@ -46,22 +46,22 @@ class DAO {
     });
   }
 
-  // async get(sql, params = []) {
-  //   return new Promise((resolve, reject) => {
-  //     if (!sql) {
-  //       reject("SQL não informado!");
-  //     }
+ /*async get(sql, params = []) {
+    return new Promise((resolve, reject) => {
+    if (!sql) {
+        reject("SQL não informado!");
+     }
 
-  //     this.db.get(sql, params, (err, result) => {
-  //       if (err) {
-  //         reject(err);
-  //       } else {
-  //         resolve(result);
-  //       }
-  //     });
-  //   });
-  // }
-
+    this.db.get(sql, params, (err, result) => {
+       if (err) {
+           reject(err);
+      } else {
+          resolve(result);
+        }
+      });
+    });
+  }
+*/
   async all(sql, params = []) {
     return new Promise((resolve, reject) => {
       if (!sql) {

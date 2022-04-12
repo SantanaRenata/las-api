@@ -28,7 +28,7 @@ describe("Essencial", () => {
   });
 
   // Escreva um SQL que cria a tabela Cupons, cada cupom possui um id (inteiro auto incremento), um nome (texto não nulo) e um desconto associado (valor decimal não nulo)
-  test("Deve criar a tabela de cupons", async () => {
+ /* test("Deve criar a tabela de cupons", async () => {
     const sqlCriarTabelaCupons = fs.readFileSync(
       "sql/criar_tabela_cupons.sql",
       "utf8"
@@ -295,4 +295,7 @@ describe("Desafio", () => {
       },
     ]);
   });
+});
+
+*/
 });

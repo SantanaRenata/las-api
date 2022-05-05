@@ -1,8 +1,8 @@
 class Tabelas {
   init(pool) {
     this.pool = pool;
-
     this.criarUsuarios();
+    this.criarEventos();
   }
 
   criarUsuarios() {
@@ -15,8 +15,24 @@ class Tabelas {
       } else {
         console.log("Tabela Usuarios criada com sucesso");
       }
-    });
-  }
+  });
 }
 
+
+criarEventos() {
+  const sql =
+    "CREATE TABLE IF NOT EXISTS Eventos(id INT AUTO_INCREMENT NOT NULL, nome varchar(100) NOT NULL, urlFotoPerfil text, UNIQUE (nome), PRIMARY KEY(id))";
+
+  this.pool.query(sql, (erro) => {
+    if (erro) {
+      console.log(erro);
+    } else {
+      console.log("Tabela Eventos criada com sucesso");
+    }
+});
+}
+}
+
+
 module.exports = new Tabelas();
+
